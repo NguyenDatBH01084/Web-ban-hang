@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="Menu.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="address">
+                <i class="fa-solid fa-location-dot"></i>
+                <a href="">30 stores nationwide</a>
+            </div>
+            <div class="PhoneNum">
+                <i class="fa-solid fa-phone"></i>
+                <a href="">0123456789</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-nav">
+            <div class="header-logo">
+                <img src="https://img.freepik.com/premium-vector/logo-boba-tea-milk-tea-shop_884893-3.jpg" alt="">
+                <h3>BOBA Tea</h3>
+            </div>
+            <div class="header-menu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="">Coffee</a></li>
+                    <li><a href="">Tea</a></li>
+                    <li><a href="">Food</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="cart.html">Showcart</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-showcase">
+        <div class="milktea">
+            <h3>MILK TEA</h3>
+            <div class="row">
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://lynhuasaigon.com/wp-content/uploads/2022/04/tra-sua-thai-do.jpg" alt="Sản phẩm 1">
+                    </div>
+                <div class="item-info">
+                    <h4>Traditional Milk Tea</h4>
+                    <p>Giá: 30.000 VNĐ</p>
+                    <button onclick="addToCart('Traditional Milk Tea', 30000)">Buy</button>
+                </div>
+                </div>
+                <div class="col-2">
+                <div class="item-img">
+                    <img src="https://phela.vn/wp-content/uploads/2023/05/a%CC%89nh-vuo%CC%82ng-sp-matcha-latte_.jpg" alt="Sản phẩm 2">
+                </div>
+                <div class="item-info">
+                    <h4>Matcha Milk Tea</h4>
+                    <p>Giá: 30.000 VNĐ</p>
+                    <button onclick="addToCart('Matcha Milktea', 30000)">Buy</button>
+                </div>
+                </div>
+                <div class="col-2">
+                <div class="item-img">
+                    <img src="https://www.nguyenlieutrasua.com/cdn/shop/articles/cach-lam-tra-sua-thai-xanh-ngon-me-ly-tai-nha_1024x1024.jpg?v=1681718481" alt="Sản phẩm 3">
+                </div>
+                <div class="item-info">
+                    <h4>Green Thai Milk Tea</h4>
+                    <p>Giá: 30.000 VNĐ</p>
+                    <button onclick="addToCart('Green Thai Milk Tea', 30000)">Buy</button>
+                </div>
+                </div>
+                <div class="col-2">
+                <div class="item-img">
+                    <img src="https://jarvis.vn/wp-content/uploads/2019/05/cach-lam-tra-sua-kiwi-1.jpg" alt="Sản phẩm 13">
+                </div>
+                <div class="item-info">
+                    <h4>Kiwi milk tea</h4>
+                    <p>Giá: 30.000 VNĐ</p>
+                    <button onclick="addToCart('Kiwi milk tea', 30000)">Buy</button>
+                </div>
+                </div>
+                <div class="col-2">
+                <div class="item-img">
+                    <img src="https://alotoday.vn/uploads/images/202409/img_x500_66de70ead3de57-87742923-51071993.jpg" alt="Sản phẩm 14">
+                </div>
+                <div class="item-info">
+                    <h4>Flan milk tea</h4>
+                    <p>Giá: 30.000 VNĐ</p>
+                    <button onclick="addToCart('Flan milk tea', 30000)">Buy</button>
+                </div>
+                </div>
+                <div class="col-2">
+                <div class="item-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTe1dth7UpKvr6bbm4hCdxhNrta6fV_OX3g&s" alt="Sản phẩm 15">
+                </div>
+                <div class="item-info">
+                    <h4>Matcha pearl milk tea</h4>
+                    <p>Giá: 30.000 VNĐ</p>
+                    <button onclick="addToCart('Matcha pearl milk tea', 30000)">Buy</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="coffee">
+            <h3>COFFEE</h3>
+            <div class="row">
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://product.hstatic.net/1000075078/product/1686716532_dd-suada_c180c6187e644babbac7019a2070231e.jpg" alt="Sản phẩm 15">
+                    </div>
+                    <div class="item-info">
+                        <h4>Iced milk coffee</h4>
+                        <p>Giá: 30.000 VNĐ</p>
+                        <button onclick="addToCart('Iced milk coffee', 30000)">Buy</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://gacoffeeandmore.com/wp-content/uploads/2022/12/Ca-Phe-Den-scaled.jpg" alt="Sản phẩm 15">
+                    </div>
+                    <div class="item-info">
+                        <h4>Black coffee</h4>
+                        <p>Giá: 25.000 VNĐ</p>
+                        <button onclick="addToCart('Black coffee', 25000)">Buy</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://toplistcafe.com/wp-content/uploads/2021/03/ca-phe-hoa-tan.jpg" alt="Sản phẩm 15">
+                    </div>
+                    <div class="item-info">
+                        <h4>Instant coffee</h4>
+                        <p>Giá: 20.000 VNĐ</p>
+                        <button onclick="addToCart('Instant coffee', 20000)">Buy</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://file.hstatic.net/200000079049/file/1.cafe-phin_c7f05868c3fb45a4894acc75fbf07eda.jpeg" alt="Sản phẩm 15">
+                    </div>
+                    <div class="item-info">
+                        <h4>Filter coffee</h4>
+                        <p>Giá: 35.000 VNĐ</p>
+                        <button onclick="addToCart('Filter coffee', 35000)">Buy</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://png.pngtree.com/png-vector/20240130/ourlarge/pngtree-cappuccino-coffee-isolated-illustration-ai-generative-png-image_11571008.png" alt="Sản phẩm 15">
+                    </div>
+                    <div class="item-info">
+                        <h4>Cappuccino</h4>
+                        <p>Giá: 40.000 VNĐ</p>
+                        <button onclick="addToCart('Cappuccino', 40000)">Buy</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="item-img">
+                        <img src="https://vinbarista.com/uploads/editer/images/blogs/cafe-mocha-la-gi.jpg" alt="Sản phẩm 15">
+                    </div>
+                    <div class="item-info">
+                        <h4>Mocha coffee</h4>
+                        <p>Giá: 45.000 VNĐ</p>
+                        <button onclick="addToCart('Mocha coffee', 45000)">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chuyen_tra">
+        <h3>TEA STORY</h3>
+        <div class="Coffeeholic">
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://cafefcdn.com/2019/2/25/photo-6-1551076592320105127651.jpg" alt="">
+                    <p>
+                        The bubble tea wave has landed and spread to many places around the world. 
+                        Bubble tea has become a popular "national drink" in Europe and America, bringing the cultural identity of East Asians around the world.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <img src="https://olongha.com/wp-content/uploads/2020/03/Hong-tra-sua-1-768x512.jpg" alt="">
+                    <p>
+                        While milk is just an ingredient that creates flavor, tea leaves contain the essence of thousands of years. For Asians, tea is not just a drink, 
+                        but it also contains the essence of thousands of years of history.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <img src="https://channel.mediacdn.vn/428462621602512896/2022/11/15/photo-1-16685072068511689927022.png" alt="">
+                    <p>
+                        Hanoi milk tea is a favorite drink of young people and an indispensable culinary culture symbol when traveling to Hanoi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 BOBA Tea. All rights reserved.</p>
+        <p><a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms of Service</a></p>
+    </div>
+
+    <script>
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' has been added to cart!');
+        }
+    </script>
+</body>
+</html>
