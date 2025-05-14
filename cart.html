@@ -23,27 +23,32 @@
   </div>
 
   <!-- Header -->
-  <div class="header">
+ <div class="header">
     <div class="header-nav">
-      <div class="header-logo">
-        <img src="https://img.freepik.com/premium-vector/logo-boba-tea-milk-tea-shop_884893-3.jpg" alt="Logo" />
-        <h3>BOBA Tea</h3>
-      </div>
-      <div class="header-menu">
-        <ul>
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="#">Coffee</a></li>
-          <li><a href="#">Tea</a></li>
-          <li><a href="#">Food</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="cart.html">Showcart</a></li>
-        </ul>
-      </div>
+        <div class="header-logo">
+            <img src="https://img.freepik.com/premium-vector/logo-boba-tea-milk-tea-shop_884893-3.jpg" alt="">
+            <h3>BOBA Tea</h3>
+        </div>
+
+        <!-- Nút hamburger thêm vào đây -->
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+        <div class="header-menu">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#!">Coffee</a></li>
+                <li><a href="#!">Tea</a></li>
+                <li><a href="#!">Food</a></li>
+                <li><a href="#!">Contact</a></li>
+                <li><a href="#!">Services</a></li>
+                <li><a href="#!">Blog</a></li>
+                <li><a href="cart.html">Showcart</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
+</div>
+
 
   <!-- Cart Section -->
   <div class="cart-container">
@@ -71,63 +76,81 @@
 
   <!-- Script -->
   <script>
-    function loadCart() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const cartTableBody = document.querySelector("#cart-items");
-      cartTableBody.innerHTML = "";
-      let total = 0;
+  // Load cart data and render the cart table
+  function loadCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartTableBody = document.querySelector("#cart-items");
+    cartTableBody.innerHTML = "";
+    let total = 0;
 
-      cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
 
-        cartTableBody.innerHTML += `
-          <tr>
-            <td data-label="Product">${item.name}</td>
-            <td data-label="Quantity">
-              <button onclick="changeQuantity(${index}, -1)">-</button>
-              <span>${item.quantity}</span>
-              <button onclick="changeQuantity(${index}, 1)">+</button>
-            </td>
-            <td data-label="Price">${item.price} VNĐ</td>
-            <td data-label="Total">${itemTotal} VNĐ</td>
-            <td data-label="Action"><button onclick="removeFromCart(${index})">Delete</button></td>
-          </tr>
-        `;
+      cartTableBody.innerHTML += `
+        <tr>
+          <td data-label="Product">${item.name}</td>
+          <td data-label="Quantity">
+            <button onclick="changeQuantity(${index}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQuantity(${index}, 1)">+</button>
+          </td>
+          <td data-label="Price">${item.price} VNĐ</td>
+          <td data-label="Total">${itemTotal} VNĐ</td>
+          <td data-label="Action"><button onclick="removeFromCart(${index})">Delete</button></td>
+        </tr>
+      `;
+    });
+
+    document.querySelector("#total-price").innerText = total + " VNĐ";
+  }
+
+  // Remove item from cart
+  function removeFromCart(index) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+
+  // Change item quantity
+  function changeQuantity(index, delta) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart[index].quantity += delta;
+    if (cart[index].quantity < 1) {
+      cart[index].quantity = 1;
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+
+  // Checkout function
+  function checkout() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+    alert("Thank you for your purchase!");
+    localStorage.removeItem("cart");
+    loadCart();
+  }
+
+  // Responsive: Toggle menu on hamburger click
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger-btn");
+    const headerMenu = document.querySelector(".header-menu");
+
+    if (hamburger && headerMenu) {
+      hamburger.addEventListener("click", function () {
+        headerMenu.classList.toggle("show");
       });
-
-      document.querySelector("#total-price").innerText = total + " VNĐ";
     }
 
-    function removeFromCart(index) {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      loadCart();
-    }
+    // Load cart when page is ready
+    loadCart();
+  });
+</script>
 
-    function changeQuantity(index, delta) {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart[index].quantity += delta;
-      if (cart[index].quantity < 1) {
-        cart[index].quantity = 1;
-      }
-      localStorage.setItem("cart", JSON.stringify(cart));
-      loadCart();
-    }
-
-    function checkout() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-      }
-      alert("Thank you for your purchase!");
-      localStorage.removeItem("cart");
-      loadCart();
-    }
-
-    window.onload = loadCart;
-  </script>
 </body>
 </html>

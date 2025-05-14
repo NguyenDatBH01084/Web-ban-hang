@@ -254,3 +254,37 @@ th {
         font-size: 18px;
     }
 }
+
+.hamburger {
+    display: none;
+}
+
+/* Chỉ hiển thị hamburger trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .header-menu {
+        display: none;
+        width: 100%;
+    }
+
+    .header-menu.show {
+        display: block;
+    }
+
+    .header-menu ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-menu ul li a {
+        padding: 10px;
+    }
+}
