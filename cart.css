@@ -142,3 +142,115 @@ th {
 .cart-summary button:hover {
     background-color: darkorange;
 }
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+    .header-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-nav .header-logo {
+        margin: 10px 0;
+    }
+
+    .header-nav .header-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-nav .header-menu ul li a {
+        padding: 10px;
+    }
+
+    .container .address,
+    .container .PhoneNum {
+        padding: 0 20px;
+    }
+
+    .cart-container {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar,
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container .address,
+    .container .PhoneNum {
+        padding: 5px 0;
+    }
+
+    .header-nav {
+        flex-direction: column;
+    }
+
+    .header-nav .header-logo {
+        margin: 10px 0;
+    }
+
+    .header-nav .header-menu {
+        width: 100%;
+    }
+
+    .header-nav .header-menu ul {
+        flex-direction: column;
+    }
+
+    .header-nav .header-menu ul li a {
+        padding: 10px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
+    .cart-summary {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-summary button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .header-nav .header-logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-nav .header-logo h3 {
+        font-size: 18px;
+    }
+}
