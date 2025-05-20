@@ -134,7 +134,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #007bff;
+    background-color: #abb836;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -224,5 +224,50 @@ body {
 
     .header-menu ul li a {
         padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Đưa banner lên đầu các sản phẩm */
+    .product-showcase {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .product-showcase > .row:first-child {
+        order: -1 !important;
+        width: 100% !important;
+        margin-bottom: 10px !important;
+    }
+    #banner {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 10px !important;
+    }
+    #banner img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 5px !important;
+    }
+    .product-showcase .item-img img {
+        width: 100% !important;
+        max-width: 200px !important;
+        margin-bottom: 10px !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo,
+    .header-logo img,
+    .header-logo h3 {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
