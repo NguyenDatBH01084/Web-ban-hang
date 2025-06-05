@@ -93,6 +93,34 @@ body {
     border-radius: 5px;
 }
 
+/* Thêm padding cho product-showcase để tránh sát viền */
+.product-showcase {
+    padding: 0 10px;
+}
+
+/* Thêm border, bo góc, bóng cho từng sản phẩm */
+.product-showcase .item-img,
+.product-showcase .item-info {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 10px;
+}
+
+.product-showcase .col-6,
+.product-showcase .col-sm-4,
+.product-showcase .col-md-3,
+.product-showcase .col-lg-2 {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Căn chỉnh banner tránh sát viền */
+#banner {
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
 .chuyen_tra{
     background-color: blanchedalmond;
 }
@@ -249,5 +277,20 @@ body {
 
     .header-menu ul li a {
         padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-showcase {
+        padding: 0 5px;
+    }
+    #banner {
+        padding: 5px 0;
+    }
+    .product-showcase .col-6,
+    .product-showcase .col-sm-4,
+    .product-showcase .col-md-3,
+    .product-showcase .col-lg-2 {
+        padding: 5px;
     }
 }

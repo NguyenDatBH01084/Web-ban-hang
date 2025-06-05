@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile - BOBA Tea</title>
+    <link rel="stylesheet" href="User.css">
+</head>
+<body>
+    <div class="top-bar">
+    <div class="container">
+      <div class="address">
+        <i class="fa-solid fa-location-dot"></i>
+        <a href="#">30 stores nationwide</a>
+      </div>
+      <div class="PhoneNum">
+        <i class="fa-solid fa-phone"></i>
+        <a href="#">0123456789</a>
+      </div>
+    </div>
+  </div>
+    <div class="header">
+    <div class="header-nav">
+        <div class="header-logo">
+            <img src="https://img.freepik.com/premium-vector/logo-boba-tea-milk-tea-shop_884893-3.jpg" alt="">
+            <h3>BOBA Tea</h3>
+        </div>
+
+        <!-- Nút hamburger thêm vào đây -->
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+
+        <div class="header-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#!">Coffee</a></li>
+                <li><a href="#!">Tea</a></li>
+                <li><a href="#!">Food</a></li>
+                <li><a href="#!">Contact</a></li>
+                <li><a href="#!">Services</a></li>
+                <li><a href="#!">Blog</a></li>
+                <li><a href="User.html">User Account</a></li>
+                <li><a href="cart.html">Showcart</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="user-container">
+        <div class="user-section">
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> Nguyễn Văn A</p>
+            <p><strong>Email:</strong> nguyenvana@email.com</p>
+            <p><strong>Phone:</strong> 0123456789</p>
+        </div>
+        <div class="user-section">
+            <h2>Purchase History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-06-01</td>
+                        <td>Matcha Milk Tea</td>
+                        <td>30,000 VNĐ</td>
+                        <td>Delivered</td>
+                    </tr>
+                    <tr>
+                        <td>2025-05-28</td>
+                        <td>Caramel Milk Tea</td>
+                        <td>30,000 VNĐ</td>
+                        <td>Delivered</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="user-section">
+            <h2>Available Vouchers</h2>
+            <div class="voucher">
+                <span>Giảm 10% cho đơn từ 100.000 VNĐ</span>
+                <span class="voucher-code">BOBA10</span>
+            </div>
+            <div class="voucher">
+                <span>Giảm 20.000 VNĐ cho đơn đầu tiên</span>
+                <span class="voucher-code">FIRST20K</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+window.onload = function() {
+    // Lấy lịch sử mua hàng từ localStorage
+    let history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+    let tbody = document.querySelector('.user-section table tbody');
+    tbody.innerHTML = ""; // Xóa nội dung cũ
+
+    if (history.length === 0) {
+        // Nếu chưa có lịch sử, hiển thị dòng trống
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        td.colSpan = 4;
+        td.style.textAlign = "center";
+        td.textContent = "No purchase history yet.";
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+    } else {
+        // Hiển thị từng đơn hàng
+        history.forEach(item => {
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${item.date}</td>
+                <td>${item.product}</td>
+                <td>${item.price}</td>
+                <td>${item.status}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+};
+</script>
+</body>
+</html>

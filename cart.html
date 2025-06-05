@@ -43,6 +43,7 @@
                 <li><a href="#!">Contact</a></li>
                 <li><a href="#!">Services</a></li>
                 <li><a href="#!">Blog</a></li>
+                <li><a href="User.html">User Account</a></li>
                 <li><a href="cart.html">Showcart</a></li>
             </ul>
         </div>
@@ -150,6 +151,26 @@
     // Load cart when page is ready
     loadCart();
   });
+
+  // Thêm vào file cart.html, sau khi xử lý mua hàng thành công
+function addPurchaseHistory(productName, productPrice) {
+    let history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+    const today = new Date().toISOString().slice(0, 10);
+    history.push({
+        date: today,
+        product: productName,
+        price: productPrice.toLocaleString() + " VNĐ",
+        status: "Delivered"
+    });
+    localStorage.setItem('purchaseHistory', JSON.stringify(history));
+}
+
+// Khi nhấn nút mua hàng, gọi thêm hàm này
+function buyProduct(productName, productPrice) {
+    // ...xử lý mua hàng...
+    addPurchaseHistory(productName, productPrice);
+    // ...các xử lý khác...
+}
 </script>
 
 </body>
